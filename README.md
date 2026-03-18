@@ -9,12 +9,12 @@ https://curiosity-jagratahuja.vercel.app/
 ## Features
 
 - 100 hand-picked curiosity prompts across 5 categories
-- Pool-drain rotation — no repeats until all 100 have been seen
+- Pool-drain rotation, no repeats until all 100 have been seen
 - Surprise Me action for a new question
 - Learn More action that opens a Google search in a new tab
 - Counter tracking how many curiosities you've explored
 - Exhaustion state when all 100 are explored, with a reset flow
-- Full session persistence via localStorage — picks up where you left off on refresh
+- Full session persistence via localStorage, picks up where you left off on refresh
 - Neon dark UI with glassmorphism and animated atmospheric effects
 
 ## How It Works
