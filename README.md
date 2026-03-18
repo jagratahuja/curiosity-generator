@@ -1,93 +1,54 @@
-# Curiosity Generator 🧠
+# Curiosity Generator
 
-A simple web tool that generates random curiosity prompts to spark learning and exploration.
+A React and TypeScript app that serves up curiosity prompts across science, history, technology, space, and random facts — and lets users jump straight into exploring each topic.
 
-Sometimes you want to learn something interesting but don’t know where to start.  
-Curiosity Generator solves this by presenting random thought-provoking questions about science, technology, nature, and everyday phenomena.
-
----
-
-## 🌐 Live Demo
+## Live Demo
 
 https://curiosity-jagratahuja.vercel.app/
 
----
+## Features
 
-## ✨ Features
+- 100 hand-picked curiosity prompts across 5 categories
+- Pool-drain rotation — no repeats until all 100 have been seen
+- Surprise Me action for a new question
+- Learn More action that opens a Google search in a new tab
+- Counter tracking how many curiosities you've explored
+- Exhaustion state when all 100 are explored, with a reset flow
+- Full session persistence via localStorage — picks up where you left off on refresh
+- Neon dark UI with glassmorphism and animated atmospheric effects
 
-- 🎲 Random curiosity generator
-- 🔄 **Surprise Me** button to generate new questions
-- 🔎 **Learn More** button that opens a Google search for the curiosity
-- 📊 Curiosity tracker that counts how many curiosities you've explored
-- 🖥️ Clean and minimal UI
+## How It Works
 
----
+1. Open the app.
+2. Click Surprise Me to reveal your first curiosity prompt.
+3. Click Learn More to search the topic in a new tab.
+4. Keep clicking Surprise Me — questions are drawn without repeats until all 100 are exhausted.
+5. Once all 100 are explored, use the Reset button to start fresh.
+6. Your progress is saved automatically and restored on refresh.
 
-## 🧠 Example Curiosities
-
-- Why do octopuses have three hearts?
-- Why do whales sing?
-- Why do leaves change color in autumn?
-- How does GPS know your location?
-- Why does ice float on water?
-- Why do we dream?
-
----
-
-## 🚀 How It Works
-
-1. Open the web app.
-2. A curiosity question appears on the screen.
-3. Click **Surprise Me** to generate another curiosity.
-4. Click **Learn More** to explore the topic on Google.
-5. The tracker shows how many curiosities you've explored during the session.
-
----
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 curiosity-generator
-│
-├── index.html
-├── style.css
-├── script.js
-└── README.md
+|-- index.html
+|-- package.json
+|-- src/
+|   |-- App.tsx
+|   |-- index.css
+|   `-- main.tsx
+`-- README.md
 ```
 
----
+## Tech Stack
 
-## 🛠️ Tech Stack
+- React 18
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
 
-- HTML
-- CSS
-- JavaScript
+## Author
 
----
-
-## 🎯 What This Project Demonstrates
-
-- simple UI interaction
-- random selection logic
-- basic user engagement features
-- clean minimal web design
-
----
-
-## 📌 Future Improvements (V2)
-
-- Curiosity categories (science, space, biology, tech)
-- Share curiosity button
-- Curiosity history
-- Daily curiosity feature
-- Persistent tracker using local storage
-
----
-
-## 👨‍💻 Author
-
-**Jagrat Ahuja**
-
-Student developer interested in computer science, productivity tools, and educational software.
+Jagrat Ahuja
 
 GitHub: https://github.com/jagratahuja

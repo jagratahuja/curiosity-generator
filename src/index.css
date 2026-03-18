@@ -1,3 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	color-scheme: dark;
+	--background: #0a0f1c;
+	--foreground: #f0f4ff;
+	--card: #0d1424;
+	--card-foreground: #f0f4ff;
+	--popover: #0d1424;
+	--popover-foreground: #f0f4ff;
+	--primary: #3b82f6;
+	--primary-foreground: #f0f4ff;
+	--secondary: #a855f7;
+	--secondary-foreground: #f0f4ff;
+	--muted: #1a2337;
+	--muted-foreground: #64748b;
+	--accent: #00d4ff;
+	--accent-foreground: #0a0f1c;
+	--border: #1e3a5f;
+	--input: #1e3a5f;
+	--ring: #00d4ff;
+	--chart-1: #3b82f6;
+	--chart-2: #a855f7;
+	--chart-3: #00d4ff;
+	--chart-4: #14b8a6;
+	--chart-5: #fbbf24;
+	--sidebar: #0d1424;
+	--sidebar-foreground: #f0f4ff;
+	--sidebar-primary: #3b82f6;
+	--sidebar-primary-foreground: #f0f4ff;
+	--sidebar-accent: #00d4ff;
+	--sidebar-accent-foreground: #0a0f1c;
+	--sidebar-border: #1e3a5f;
+	--sidebar-ring: #00d4ff;
+	--electric-blue: #3b82f6;
+	--neon-purple: #a855f7;
+	--teal: #14b8a6;
+	--navy-dark: #0a0f1c;
+	--navy-light: #0d1424;
+}
+
+html {
+	background: var(--background);
+}
+
+body {
+	min-width: 320px;
+	min-height: 100vh;
+	margin: 0;
+	background:
+		radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 28%),
+		radial-gradient(circle at top right, rgba(168, 85, 247, 0.16), transparent 24%),
+		radial-gradient(circle at bottom center, rgba(20, 184, 166, 0.14), transparent 30%),
+		linear-gradient(180deg, #0d1424 0%, #0a0f1c 100%);
+	color: var(--foreground);
+	font-family: 'Plus Jakarta Sans', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+	background: rgba(0, 212, 255, 0.28);
+	color: #f0f4ff;
+}
+
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Space Grotesk', sans-serif;
+}
+
+#root {
+	min-height: 100vh;
+}
+
+.app-shell {
+	position: relative;
+	isolation: isolate;
+}
+
+.app-header {
+	position: sticky;
+	top: 0;
+	backdrop-filter: blur(18px);
+	background: linear-gradient(180deg, rgba(10, 15, 28, 0.88), rgba(10, 15, 28, 0.42));
+	border-bottom: 1px solid rgba(30, 58, 95, 0.42);
+}
+
+.app-hero-shell {
+	background: linear-gradient(140deg, rgba(59, 130, 246, 0.35), rgba(0, 212, 255, 0.12), rgba(168, 85, 247, 0.26));
+	box-shadow: 0 0 0 1px rgba(30, 58, 95, 0.35), 0 30px 70px rgba(2, 6, 23, 0.45);
+}
+
+.app-hero-inner {
+	position: relative;
+	overflow: hidden;
+	background:
+		radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 28%),
+		radial-gradient(circle at bottom right, rgba(168, 85, 247, 0.16), transparent 30%),
+		linear-gradient(180deg, rgba(13, 20, 36, 0.95), rgba(10, 15, 28, 0.98));
+}
+
+.app-hero-inner::after {
+	content: '';
+	position: absolute;
+	inset: 1px;
+	border-radius: inherit;
+	background-image:
+		linear-gradient(rgba(30, 58, 95, 0.07) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(30, 58, 95, 0.07) 1px, transparent 1px);
+	background-size: 34px 34px;
+	mask-image: radial-gradient(circle at center, black 38%, transparent 90%);
+	opacity: 0.35;
+	pointer-events: none;
+}
+
+.app-footer-copy {
+	font-family: 'Geist', 'Plus Jakarta Sans', sans-serif;
+}
+
+.app-title-gradient {
+	background: linear-gradient(90deg, #f0f4ff 0%, #00d4ff 42%, #a855f7 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.app-grid {
+	position: absolute;
+	inset: 0;
+	background-image:
+		linear-gradient(rgba(30, 58, 95, 0.1) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(30, 58, 95, 0.1) 1px, transparent 1px);
+	background-size: 42px 42px;
+	mask-image: radial-gradient(circle at center, black 48%, transparent 100%);
+	opacity: 0.45;
+	pointer-events: none;
+	animation: grid-drift 24s linear infinite;
+}
+
+.app-orb {
+	position: absolute;
+	border-radius: 9999px;
+	filter: blur(90px);
+	opacity: 0.65;
+	pointer-events: none;
+	animation: orb-float 16s ease-in-out infinite;
+}
+
+.app-orb-cyan {
+	top: 8%;
+	left: -6rem;
+	width: 18rem;
+	height: 18rem;
+	background: rgba(0, 212, 255, 0.16);
+}
+
+.app-orb-violet {
+	top: 12%;
+	right: -5rem;
+	width: 20rem;
+	height: 20rem;
+	background: rgba(168, 85, 247, 0.16);
+	animation-delay: -5s;
+}
+
+.app-orb-teal {
+	bottom: 6%;
+	left: 50%;
+	width: 24rem;
+	height: 24rem;
+	transform: translateX(-50%);
+	background: rgba(20, 184, 166, 0.12);
+	animation-delay: -9s;
+}
+
+.app-panel {
+	background: linear-gradient(135deg, rgba(59, 130, 246, 0.35), rgba(0, 212, 255, 0.12), rgba(168, 85, 247, 0.28));
+	box-shadow: 0 0 0 1px rgba(30, 58, 95, 0.42), 0 0 48px rgba(59, 130, 246, 0.08);
+}
+
+.app-panel-inner {
+	position: relative;
+	overflow: hidden;
+}
+
+.app-panel-inner::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background:
+		radial-gradient(circle at top center, rgba(240, 244, 255, 0.08), transparent 34%),
+		linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 26%, transparent 74%, rgba(0, 212, 255, 0.05));
+	pointer-events: none;
+}
+
+.app-panel-inner::after {
+	content: '';
+	position: absolute;
+	inset: 1px;
+	border-radius: inherit;
+	background-image:
+		linear-gradient(rgba(30, 58, 95, 0.06) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(30, 58, 95, 0.06) 1px, transparent 1px);
+	background-size: 26px 26px;
+	opacity: 0.35;
+	mask-image: radial-gradient(circle at center, black 44%, transparent 94%);
+	pointer-events: none;
+}
+
+.app-icon-frame {
+	position: relative;
+	animation: icon-pulse 6s ease-in-out infinite;
+}
+
+.app-icon-frame::after {
+	content: '';
+	position: absolute;
+	inset: -12px;
+	border-radius: 30px;
+	border: 1px solid rgba(0, 212, 255, 0.16);
+	opacity: 0.8;
+	animation: ring-pulse 4s ease-in-out infinite;
+}
+
+.app-cta {
+	position: relative;
+	overflow: hidden;
+	will-change: transform, box-shadow;
+}
+
+.app-cta:focus-visible {
+	outline: 2px solid rgba(0, 212, 255, 0.8);
+	outline-offset: 2px;
+}
+
+.app-cta-primary:hover {
+	filter: saturate(1.08);
+}
+
+.app-cta-primary {
+	background-image: radial-gradient(170% 240% at 0% 0%, #7c3aed 0%, #a855f7 52%, #ec4899 100%);
+	background-repeat: no-repeat;
+}
+
+.app-cta-secondary:hover {
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 0 24px rgba(0, 212, 255, 0.12);
+}
+
+.app-button-sheen {
+	position: absolute;
+	inset: -40% auto -40% -120%;
+	width: 55%;
+	transform: skewX(-24deg);
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.24), transparent);
+	opacity: 0;
+	transition: transform 0.9s ease, opacity 0.35s ease;
+	pointer-events: none;
+}
+
+.app-cta:hover .app-button-sheen {
+	opacity: 1;
+	transform: translateX(320%) skewX(-24deg);
+}
+
+.app-reveal {
+	opacity: 0;
+	transform: translateY(22px) scale(0.985);
+	animation: reveal-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+	animation-delay: var(--reveal-delay, 0ms);
+}
+
+.app-reveal-delay-1 {
+	--reveal-delay: 90ms;
+}
+
+.app-reveal-delay-2 {
+	--reveal-delay: 180ms;
+}
+
+.app-reveal-delay-3 {
+	--reveal-delay: 280ms;
+}
+
+.app-reveal-delay-4 {
+	--reveal-delay: 380ms;
+}
+
+.app-reveal-delay-5 {
+	--reveal-delay: 500ms;
+}
+
+.app-reveal-delay-6 {
+	--reveal-delay: 620ms;
+}
+
+.app-reveal-delay-7 {
+	--reveal-delay: 730ms;
+}
+
+.app-reveal-delay-8 {
+	--reveal-delay: 840ms;
+}
+
+@keyframes reveal-up {
+	0% {
+		opacity: 0;
+		transform: translateY(22px) scale(0.985);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes orb-float {
+	0%,
+	100% {
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+	50% {
+		transform: translate3d(0, -14px, 0) scale(1.05);
+	}
+}
+
+@keyframes grid-drift {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	50% {
+		transform: translate3d(8px, -6px, 0);
+	}
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+
+@keyframes icon-pulse {
+	0%,
+	100% {
+		box-shadow: 0 0 40px rgba(59, 130, 246, 0.28);
+	}
+	50% {
+		box-shadow: 0 0 52px rgba(168, 85, 247, 0.24);
+	}
+}
+
+@keyframes ring-pulse {
+	0%,
+	100% {
+		transform: scale(0.98);
+		opacity: 0.55;
+	}
+	50% {
+		transform: scale(1.05);
+		opacity: 0.12;
+	}
+}
+
+@media (max-width: 640px) {
+	.app-grid {
+		background-size: 32px 32px;
+		opacity: 0.32;
+	}
+
+	.app-orb-cyan,
+	.app-orb-violet,
+	.app-orb-teal {
+		filter: blur(72px);
+	}
+
+	.app-footer .text-right {
+		text-align: center;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.app-grid,
+	.app-orb,
+	.app-icon-frame,
+	.app-icon-frame::after,
+	.app-reveal {
+		animation: none;
+		opacity: 1;
+		transform: none;
+	}
+
+	.app-button-sheen {
+		transition: none;
+	}
+}
