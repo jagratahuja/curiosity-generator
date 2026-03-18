@@ -1,6 +1,6 @@
 # Curiosity Generator
 
-A React and TypeScript app that serves up curiosity prompts across science, history, technology, space, and random facts — and lets users jump straight into exploring each topic.
+A React and TypeScript app that serves up curiosity prompts across science, history, technology, space, and random facts; and lets users jump straight into exploring each topic.
 
 ## Live Demo
 
@@ -52,3 +52,4 @@ curiosity-generator
 Jagrat Ahuja
 
 GitHub: https://github.com/jagratahuja
+Portfolio: https://jagratahuja.vercel.app/
